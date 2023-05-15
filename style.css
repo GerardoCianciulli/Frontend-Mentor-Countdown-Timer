@@ -1,0 +1,215 @@
+:root{
+    --white: hsl(0, 0%, 100%);
+    --dark-blue: hsl(236, 21%, 26%);
+    --background-blue: hsl(235, 16%, 14%);
+    --black: hsl(234, 17%, 12%);
+    --grey-blue: 237, 18%, 59%;
+    --soft-red: hsl(345, 95%, 68%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    font: inherit;
+}
+
+img, svg {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    background-color: var(--background-blue);
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight: 700;
+    font-size: 7px;
+    letter-spacing: 2.96px;
+    color: hsl(var(--grey-blue));
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#background-image {
+    position: absolute;
+    z-index: -1;
+}
+
+header {
+    padding: 142px 24px 54px 24px;
+}
+
+h1 {
+    color: var(--white);
+    font-size: 18px;
+    letter-spacing: 6.14px;
+}
+
+main {
+    padding: 0 24px;
+}
+
+.clock-container { 
+    display: grid;
+    grid-template-columns: 21.5% 21.5% 21.5% 21.5%;
+    grid-template-rows: 66.27px auto;
+    /* grid-template-areas: 
+      "days hours minutes seconds"
+      "days-text hours-text minutes-text seconds-text"; */
+    margin: auto;
+    gap: 14px 4.666%;
+    min-width: 327px;
+    max-width: 400px;
+    height: 92px;
+    place-content: center;
+}
+
+.clock-container>div {
+    background-color: var(--dark-blue);
+    border-radius: 8px;
+    box-shadow: 0 4.73px var(--black);
+}
+
+.clock-container>div .clock-digits:last-child {
+    background-color: hsla(var(--grey-blue), 15%);
+    border-radius: 8px;
+    display: flex;
+    flex-flow: column-reverse;
+}
+
+#clock-days .clock-perspective-plane{
+    transform: perspective(9cm) rotateX(0deg) rotateY(0deg);
+}
+
+#clock-hours .clock-perspective-plane{
+    transform: perspective(9cm) rotateX(0deg) rotateY(0deg);
+}
+
+#clock-minutes .clock-perspective-plane{
+    transform: perspective(9cm) rotateX(0deg) rotateY(0deg);
+}
+
+#clock-seconds .clock-perspective-plane{
+    transform: perspective(9cm) rotateX(0deg) rotateY(0deg);
+}
+
+.clock-perspective-plane {
+    font-size: 36px;
+    color: var(--soft-red);
+    line-height: 66.27px;
+    height: 50%;
+    overflow: hidden;
+    margin-top: -33.135px;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    background-color: var(--dark-blue);
+    border-radius: 8px;
+}
+
+.clock-perspective-plane>.plane-ellipsis {
+    margin-top: -76px;
+}
+
+.plane-ellipsis {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    overflow: hidden;
+    position: absolute;
+    margin-top: -6px;
+}
+
+.plane-ellipsis>div {
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    background-color: var(--black);
+    position: relative;
+    left: 6px;
+}
+
+.plane-ellipsis>div:first-child{
+    left: -6px;
+}
+/* use when rotation is greater then 90 selector for javascript .clock-perspective-plane div:first-child*/ 
+.back {
+    background-color: hsla(var(--grey-blue), 15%);
+    transform: scaleY(-1); 
+}
+
+.clock-digits {
+    font-size: 36px;
+    color: var(--soft-red);
+    line-height: 66.27px;
+    height: 50%;
+    overflow: hidden;
+}
+  
+footer {
+    margin-top: 259px;
+}
+
+footer>div {
+    display: flex;
+    width: 136px;
+    margin: auto;
+    justify-content: space-between;
+}
+
+footer>div svg {
+    fill: hsl(var(--grey-blue));
+}
+footer>div svg:hover, footer>div svg:focus {
+    fill: var(--soft-red);
+    cursor: pointer;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media (min-width: 650px) {
+    body {
+        font-size: 14px;
+        letter-spacing: 5.92px;
+    }
+    
+    header {
+        padding: 135px 24px 104px 24px;
+    }
+    
+    h1 {
+        font-size: 22px;
+        letter-spacing: 7.5px;
+    }
+    .clock-container { 
+        max-width: 688px;
+        height: 184px;
+        grid-template-rows: 140px auto;
+    }
+
+    .clock-container>div {
+        box-shadow: 0 10px var(--black);
+    }
+    
+    .clock-perspective-plane {
+        font-size: 80px;
+        line-height: 140px;
+        margin-top: -70px;
+    }
+    .clock-digits {
+        font-size: 80px;
+        line-height: 140px;
+    }
+
+    footer {
+        margin-top: 252px;
+    }    
+}
