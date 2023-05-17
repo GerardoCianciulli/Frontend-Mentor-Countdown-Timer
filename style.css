@@ -23,13 +23,17 @@ img, svg {
 
 body {
     background-color: var(--background-blue);
+    background-image: url(assets/images/pattern-hills.svg), url(assets/images/bg-stars.svg);
+    background-position: center bottom, center top;
+    background-repeat: repeat-x, no-repeat;
     font-family: 'Red Hat Text', sans-serif;
     font-weight: 700;
-    font-size: 7px;
-    letter-spacing: 2.96px;
+    font-size: .4375rem;
+    letter-spacing: .185rem;
     color: hsl(var(--grey-blue));
     text-align: center;
     text-transform: uppercase;
+    height: 100vh;
 }
 
 #background-image {
@@ -38,47 +42,44 @@ body {
 }
 
 header {
-    padding: 142px 24px 54px 24px;
+    padding: 8.875rem 1.5rem 3.375rem 1.5rem;
 }
 
 h1 {
     color: var(--white);
-    font-size: 18px;
-    letter-spacing: 6.14px;
+    font-size: 1.125rem;
+    letter-spacing: .38375rem;
 }
 
 main {
-    padding: 0 24px;
+    padding: 0 1.5rem;
 }
 
 .clock-container { 
     display: grid;
     grid-template-columns: 21.5% 21.5% 21.5% 21.5%;
-    grid-template-rows: 66.27px auto;
-    /* grid-template-areas: 
-      "days hours minutes seconds"
-      "days-text hours-text minutes-text seconds-text"; */
+    grid-template-rows: 4.14rem auto;
     margin: auto;
-    gap: 14px 4.666%;
-    min-width: 327px;
-    max-width: 400px;
-    height: 92px;
+    gap: .875rem 4.666%;
+    min-width: 20.4375rem;
+    max-width: 25rem;
+    height: 5.75rem;
     place-content: center;
 }
 
 .clock-container>div {
     background-color: var(--dark-blue);
-    border-radius: 8px;
-    box-shadow: 0 4.73px var(--black);
+    border-radius: .5rem;
+    box-shadow: 0 4.7.1875rem var(--black);
 }
 
-.clock-container>div .clock-digits:last-child {
+.clock-digits.lower-panel {
     background-color: hsla(var(--grey-blue), 15%);
-    border-radius: 8px;
+    border-radius: .5rem;
     display: flex;
     flex-flow: column-reverse;
 }
-
+/* 
 #clock-days .clock-perspective-plane{
     transform: perspective(9cm) rotateX(0deg) rotateY(0deg);
 }
@@ -96,7 +97,8 @@ main {
 }
 
 .clock-perspective-plane {
-    font-size: 36px;
+    display: none;
+    font-size: 2.25rem;
     color: var(--soft-red);
     line-height: 66.27px;
     height: 50%;
@@ -105,111 +107,126 @@ main {
     transform-origin: bottom;
     transform-style: preserve-3d;
     background-color: var(--dark-blue);
-    border-radius: 8px;
-}
-
-.clock-perspective-plane>.plane-ellipsis {
-    margin-top: -76px;
-}
+    border-radius: .5rem;
+} */
 
 .plane-ellipsis {
     display: flex;
-    width: 100%;
     justify-content: space-between;
+    margin-top: -2.25rem;
     overflow: hidden;
-    position: absolute;
-    margin-top: -6px;
 }
 
 .plane-ellipsis>div {
-    width: 12px;
-    height: 12px;
-    border-radius: 50px;
+    width: .375rem;
+    height: .375rem;
     background-color: var(--black);
-    position: relative;
-    left: 6px;
+    border-radius: 50%;
+    margin-left: -.1875rem;
 }
 
-.plane-ellipsis>div:first-child{
-    left: -6px;
+.plane-ellipsis>div:last-child{
+    margin-right: -.1875rem;
 }
-/* use when rotation is greater then 90 selector for javascript .clock-perspective-plane div:first-child*/ 
+/* use when rotation is greater then 90 selector for javascript .clock-perspective-plane div:first-child 
 .back {
     background-color: hsla(var(--grey-blue), 15%);
     transform: scaleY(-1); 
-}
+} */
 
 .clock-digits {
-    font-size: 36px;
+    font-size: 2.25rem;
     color: var(--soft-red);
-    line-height: 66.27px;
+    line-height: 4.14rem;
     height: 50%;
     overflow: hidden;
 }
   
 footer {
-    margin-top: 259px;
-}
+    position: absolute;
+    bottom: 3.125rem;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 100%;
+}    
 
-footer>div {
-    display: flex;
-    width: 136px;
-    margin: auto;
-    justify-content: space-between;
+footer>div i {
+    font-size: 1.5rem;
 }
-
-footer>div svg {
-    fill: hsl(var(--grey-blue));
-}
-footer>div svg:hover, footer>div svg:focus {
-    fill: var(--soft-red);
+footer>div i:hover, footer>div i:focus {
+    color: var(--soft-red);
     cursor: pointer;
 }
 
-.attribution { 
-    font-size: 11px; 
-    text-align: center; 
+.attribution {
+    letter-spacing: .09375rem;
+    text-align: center;
+    width: 100%;
+    color: hsl(var(--grey-blue));
+    margin-top: 1.25rem; 
 }
 
-.attribution a { 
-    color: hsl(228, 45%, 44%); 
+.attribution a {
+    color: var(--dark-blue);
+    letter-spacing: .09375rem;
+    text-align: center;
+    text-decoration: none;
 }
 
 @media (min-width: 650px) {
     body {
-        font-size: 14px;
-        letter-spacing: 5.92px;
+        font-size: .875rem;
+        letter-spacing: .37rem;
     }
     
     header {
-        padding: 135px 24px 104px 24px;
+        padding: 8.4375rem 1.5rem 6.5rem 1.5rem;
     }
     
     h1 {
-        font-size: 22px;
-        letter-spacing: 7.5px;
+        font-size: 1.375rem;
+        letter-spacing: .46875rem;
     }
     .clock-container { 
-        max-width: 688px;
-        height: 184px;
-        grid-template-rows: 140px auto;
+        max-width: 43rem;
+        height: 11.5rem;
+        grid-template-rows: 8.75rem auto;
     }
 
     .clock-container>div {
-        box-shadow: 0 10px var(--black);
+        box-shadow: 0 .625rem var(--black);
     }
     
-    .clock-perspective-plane {
-        font-size: 80px;
-        line-height: 140px;
-        margin-top: -70px;
-    }
-    .clock-digits {
-        font-size: 80px;
-        line-height: 140px;
-    }
+    /* .clock-perspective-plane {
+        font-size: 5rem;
+        line-height: 8.75rem;
+        margin-top: -4.375rem;
+    } */
 
-    footer {
-        margin-top: 252px;
-    }    
+    .clock-digits {
+        font-size: 5rem;
+        line-height: 8.75rem;
+    }
+    .plane-ellipsis {
+        display: flex;
+        justify-content: space-between;
+        margin-top: -4.75rem;
+        overflow: hidden;
+    }
+    
+    .plane-ellipsis>div {
+        width: .75rem;
+        height: .75rem;
+        background-color: var(--black);
+        border-radius: 50%;
+        margin-left: -.375rem;
+    }
+    
+    .plane-ellipsis>div:last-child{
+        margin-right: -.375rem;
+    } 
+
+    .attribution {
+        letter-spacing: .1875rem;
+    }
 }
