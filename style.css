@@ -36,11 +36,6 @@ body {
     height: 100vh;
 }
 
-#background-image {
-    position: absolute;
-    z-index: -1;
-}
-
 header {
     padding: 8.875rem 1.5rem 3.375rem 1.5rem;
 }
@@ -79,25 +74,33 @@ main {
     display: flex;
     flex-flow: column-reverse;
 }
-/* 
-#clock-days .clock-perspective-plane{
-    transform: perspective(9cm) rotateX(0deg) rotateY(0deg);
+
+/* #clock-days:hover .clock-perspective-plane {
+    transition: transform 300ms;
+    transform: rotateX(-170deg);
 }
 
-#clock-hours .clock-perspective-plane{
-    transform: perspective(9cm) rotateX(0deg) rotateY(0deg);
+#clock-hours:hover .clock-perspective-plane {
+    transition: transform 300ms;
+    transform: rotateX(-170deg);
 }
 
-#clock-minutes .clock-perspective-plane{
-    transform: perspective(9cm) rotateX(0deg) rotateY(0deg);
+#clock-minutes:hover .clock-perspective-plane {
+    transition: transform 300ms;
+    transform: rotateX(-170deg);
 }
 
-#clock-seconds .clock-perspective-plane{
-    transform: perspective(9cm) rotateX(0deg) rotateY(0deg);
+#clock-seconds:hover .clock-perspective-plane {
+    transition: transform 300ms;
+    transform: rotateX(-170deg);
+} */
+
+.back.clock-perspective-plane {
+    transition: transform 250ms;
+    transform: rotateX(-90deg);
 }
 
 .clock-perspective-plane {
-    display: none;
     font-size: 2.25rem;
     color: var(--soft-red);
     line-height: 66.27px;
@@ -108,7 +111,9 @@ main {
     transform-style: preserve-3d;
     background-color: var(--dark-blue);
     border-radius: .5rem;
-} */
+    transform: perspective(9cm) rotateX(0deg) rotateY(0deg);
+    
+}
 
 .plane-ellipsis {
     display: flex;
@@ -197,11 +202,11 @@ footer>div i:hover, footer>div i:focus {
         box-shadow: 0 .625rem var(--black);
     }
     
-    /* .clock-perspective-plane {
+    .clock-perspective-plane {
         font-size: 5rem;
         line-height: 8.75rem;
         margin-top: -4.375rem;
-    } */
+    }
 
     .clock-digits {
         font-size: 5rem;
