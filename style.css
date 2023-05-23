@@ -75,46 +75,6 @@ main {
     flex-flow: column-reverse;
 }
 
-/* #clock-days:hover .clock-perspective-plane {
-    transition: transform 300ms;
-    transform: rotateX(-170deg);
-}
-
-#clock-hours:hover .clock-perspective-plane {
-    transition: transform 300ms;
-    transform: rotateX(-170deg);
-}
-
-#clock-minutes:hover .clock-perspective-plane {
-    transition: transform 300ms;
-    transform: rotateX(-170deg);
-}
-
-#clock-seconds:hover .clock-perspective-plane {
-    transition: transform 300ms;
-    transform: rotateX(-170deg);
-} */
-
-.back.clock-perspective-plane {
-    transition: transform 250ms;
-    transform: rotateX(-90deg);
-}
-
-.clock-perspective-plane {
-    font-size: 2.25rem;
-    color: var(--soft-red);
-    line-height: 66.27px;
-    height: 50%;
-    overflow: hidden;
-    margin-top: -33.135px;
-    transform-origin: bottom;
-    transform-style: preserve-3d;
-    background-color: var(--dark-blue);
-    border-radius: .5rem;
-    transform: perspective(9cm) rotateX(0deg) rotateY(0deg);
-    
-}
-
 .plane-ellipsis {
     display: flex;
     justify-content: space-between;
@@ -133,11 +93,6 @@ main {
 .plane-ellipsis>div:last-child{
     margin-right: -.1875rem;
 }
-/* use when rotation is greater then 90 selector for javascript .clock-perspective-plane div:first-child 
-.back {
-    background-color: hsla(var(--grey-blue), 15%);
-    transform: scaleY(-1); 
-} */
 
 .clock-digits {
     font-size: 2.25rem;
@@ -200,12 +155,6 @@ footer>div i:hover, footer>div i:focus {
 
     .clock-container>div {
         box-shadow: 0 .625rem var(--black);
-    }
-    
-    .clock-perspective-plane {
-        font-size: 5rem;
-        line-height: 8.75rem;
-        margin-top: -4.375rem;
     }
 
     .clock-digits {

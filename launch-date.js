@@ -22,35 +22,23 @@ $(document).ready(function(){
           if(daysLeft != newDaysLeft) {
             $("#clock-days").find(".clock-digits").text(newDaysLeft);
             daysLeft = newDaysLeft;
-            $("#clock-days").find(".clock-perspective-plane").addClass("back");
           }
 
           if(hoursLeft != newHoursLeft) {
             $("#clock-hours").find(".clock-digits").text(newHoursLeft);
             hoursLeft = newHoursLeft;
-            $("#clock-hours").find(".clock-perspective-plane").addClass("back");
           }
 
           if(minutesLeft != newMinutesLeft) {
               $("#clock-minutes").find(".clock-digits").text(newMinutesLeft);
               minutesLeft = newMinutesLeft
-            $("#clock-minutes").find(".clock-perspective-plane").addClass("back");
           }
 
           if(secondsLeft != newSecondsLeft) {
             $("#clock-seconds").find(".clock-digits").text(newSecondsLeft);
-            // $($("#clock-seconds").find(".clock-perspective-plane").children()[0]).text(secondsLeft)
             secondsLeft = newSecondsLeft;
-            $("#clock-seconds").find(".clock-perspective-plane").show();
-
-            $("#clock-seconds").find(".clock-perspective-plane").addClass("back");
 
           }
-console.log("addClass")
-          setTimeout(function(){
-            $(".clock-perspective-plane").removeClass("back");
-            $(".clock-perspective-plane").hide();
-      },300);
         };
 
         updateTimer();
